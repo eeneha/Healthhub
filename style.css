@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,800;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+/* Global styles */
+:root {
+  font-size: 10px;
+  font-family: "times new roman", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* Set background image to cover the whole page, including the header */
+  background: url('/newH/img/19366.jpg') no-repeat center center/cover;
+  height: 100vh;
+}
+
+/* Header section with a wider rectangular box and shadow effect */
+#header {
+  height: max-content;
+  font-family: "times new roman", sans-serif;
+  width: 95%; /* Increased width for a wider box */
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for better visibility */
+  padding: 1rem;
+  position: fixed; /* Fixed position to stay on top while scrolling */
+  z-index: 100;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center the header */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  border-radius: 100px; /* Slightly rounded corners */
+  max-width: 98rem; /* Increased max width */
+  margin-top: 1rem;
+}
+
+@media (max-width: 800px) {
+  #header {
+    text-align: center;
+    height: auto;
+  }
+}
+
+.header-content-div {
+  max-width: 98rem;
+  width: auto;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  .header-content-div {
+    max-width: 85rem;
+  }
+}
+
+/* Logo styling inside the header */
+#header-img {
+  height: 5rem;
+  width: auto;
+}
+
+@media (max-width: 800px) {
+  #header-img {
+    height: 4rem;
+  }
+}
+
+/* Navigation bar styling */
+nav {
+  position: relative;
+  top: 0.8rem;
+  float: right;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 1.5rem 0;
+}
+
+@media (max-width: 800px) {
+  nav {
+    position: static;
+    float: none;
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Navigation links */
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  margin: 0 0.5rem;
+  padding: 0 0.6rem;
+  transition: border-bottom 0.2s;
+}
+
+@media (max-width: 475px) {
+  .nav-link {
+    margin: 0 0.2rem;
+    padding: 0 0.2rem;
+    font-size: 1.2rem;
+  }
+}
+
+.nav-link:hover {
+  color: #e23d3d;
+  border-bottom: 2px solid #e23d3d;
+}
+
+.nav-link:active {
+  color: #f84848;
+}
+
+/* Search box styling */
+.search-box {
+  float: right;
+  margin: 0 2rem;
+}
+
+.search-box input {
+  padding: 10px 15px;
+  border: 2px solid #0e064e;
+  border-radius: 20px;
+  width: 220px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-box input:focus {
+  width: 300px;
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Flexible section to align content properly */
+.flexible {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+/* Home section with background image covering the entire screen */
+.home-sec {
+  font-family: "Montserrat", sans-serif;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  text-align: start;
+  min-height: 100vh; /* Cover the whole screen */
+  height: auto;
+  margin: 0;
+  justify-content: start;
+  max-width: 100%;
+  color: #333;
+}
+
+@media (max-width: 800px) {
+  .home-sec {
+    flex-flow: column wrap;
+  }
+}
+
+/* Styling for main heading inside home section */
+.eye-grabber {
+  flex: 1;
+  padding: 0 2rem;
+}
+
+@media (max-width: 800px) {
+  .eye-grabber {
+    max-width: max-content;
+    padding-bottom: 8rem;
+  }
+}
+
+.eye-grabber h1 {
+  font-size: 5rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.eye-grabber h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #666;
+}
+
+/* Image styling inside the home section */
+.eye-grabber-img {
+  flex: 1;
+}
+
+@media (max-width: 800px) {
+  .eye-grabber-img {
+    width: 100%;
+  }
+}
+
+.eye-grabber-img img {
+  max-width: 100%;
+}
+
+/* Button styling */
+.btn {
+  border: none;
+  font-size: 2rem;
+  border-radius: 0.4rem;
+  padding: 2rem;
+  background-color: #e23d3d;
+  color: #fafafa;
+  outline: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: #f84848;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+  
