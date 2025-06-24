@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Handle the "Continue" button in the Registration form
+      const continueButton = document.querySelector(".registration .button");
+      if (continueButton) {
+        continueButton.addEventListener("click", function () {
+          document.getElementById("check").checked = false; // Switch back to Login
+        });
+      }
+  
+      // Handle the "Update Password" button in the New Password form
+      const updateButton = document.querySelector(".new-password .update-btn");
+      if (updateButton) {
+        updateButton.addEventListener("click", function () {
+          document.getElementById("new-password-check").checked = false; // Hide new password form
+          document.getElementById("forgot-password-check").checked = false; // Ensure forgot password form is also hidden
+        });
+      }
+    });
+  </script>
+  
+  <div class="container">
+    <input type="checkbox" id="check" hidden />
+    <input type="checkbox" id="forgot-password-check" hidden />
+    <input type="checkbox" id="new-password-check" hidden />
+  
+    <!-- Login Form -->
+    <div class="login form">
+      <header>Login</header>
+      <form action="login.php" method="POST" id="login-form">
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <div class="password-wrapper">
+          <input type="password" id="login_password" name="password" placeholder="Enter Password">
+          <div class="toggle-container" id="toggleLoginPassword">
+            <i class="fa fa-eye"></i>
+            <span class="toggle-text">Show Password</span>
+          </div>
+        </div>                    
+        <a href="forget_password.html" id="forgot-password-link">Forgot password?</a>
+        <input type="submit" class="button" value="Login" />
+      </form>
+      <div class="signup">
+        <span>Don't have an account? <label for="check">Register</label></span>
+      </div>
+    </div>
+  
+    <!-- Registration Form -->
+    <div class="registration form">
+      <header>Register</header>
+      <form action="registration.php" method="POST">
+        <input type="text" name="Name" placeholder="Enter Name" required />
+        <input type="email" name="email" placeholder="Enter Email" required />
+        <input type="date" name="dob" required />
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender" required>
+          <option value="" disabled selected>Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Prefer Not To Say">Prefer Not To Say</option>
+        </select>
+        <input type="tel" name="phone" placeholder="Enter Number" required />
+        <input type="text" name="username" placeholder="Create Username" required />
+        <div class="password-wrapper">
+          <input type="password" id="register_password" name="password" placeholder="Create Password">
+          <div class="toggle-container" id="toggleRegisterPassword">
+            <i class="fa fa-eye"></i>
+            <span class="toggle-text">Show Password</span>
+          </div>
+        </div>                      
+        <input type="submit" class="button" id="register" value="Register" />
+      </form>
+      <div class="signup">
+        <span>Already have an account? <label for="check">Login</label></span>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggles = [
+          { toggleId: "toggleLoginPassword", inputId: "login_password" },
+          { toggleId: "toggleRegisterPassword", inputId: "register_password" }
+        ];
+      
+        toggles.forEach(({ toggleId, inputId }) => {
+          const toggle = document.getElementById(toggleId);
+          const input = document.getElementById(inputId);
+          const icon = toggle?.querySelector("i");
+      
+          if (toggle && input && icon) {
+            toggle.addEventListener("click", () => {
+              if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+              } else {
+                input.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+              }
+            });
+          }
+        });
+      });
+      </script>
+      
+    </body>
+    </html>
